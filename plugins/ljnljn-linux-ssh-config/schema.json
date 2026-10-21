@@ -1,0 +1,192 @@
+{
+  "protocol": 2,
+  "plugin": "org.ljnljn.linux-ssh-config",
+  "sdk": "0.2.0",
+  "analyzers": [
+    "sshd_config",
+    "ssh_config",
+    "authorized_keys",
+    "host_keys"
+  ],
+  "filesystems": [],
+  "records": [
+    {
+      "type": "profile.fact",
+      "label": "检材画像",
+      "title": "{key}",
+      "fields": [
+        {
+          "id": "key",
+          "label": "键",
+          "kind": "text",
+          "key": true
+        },
+        {
+          "id": "value",
+          "label": "值",
+          "kind": "json"
+        },
+        {
+          "id": "system",
+          "label": "系统",
+          "kind": "text"
+        }
+      ]
+    },
+    {
+      "type": "linux.ssh.server_setting",
+      "label": "SSH 服务端配置项",
+      "title": "{keyword} = {value}",
+      "fields": [
+        {
+          "id": "source",
+          "label": "来源文件",
+          "kind": "text",
+          "key": true
+        },
+        {
+          "id": "line",
+          "label": "行号",
+          "kind": "int",
+          "key": true
+        },
+        {
+          "id": "section",
+          "label": "作用域",
+          "kind": "text"
+        },
+        {
+          "id": "keyword",
+          "label": "关键字",
+          "kind": "text",
+          "key": true
+        },
+        {
+          "id": "value",
+          "label": "值",
+          "kind": "text"
+        }
+      ]
+    },
+    {
+      "type": "linux.ssh.client_setting",
+      "label": "SSH 客户端配置项",
+      "title": "{host}: {keyword} = {value}",
+      "fields": [
+        {
+          "id": "source",
+          "label": "来源文件",
+          "kind": "text",
+          "key": true
+        },
+        {
+          "id": "line",
+          "label": "行号",
+          "kind": "int",
+          "key": true
+        },
+        {
+          "id": "host",
+          "label": "Host 模式",
+          "kind": "text",
+          "key": true
+        },
+        {
+          "id": "keyword",
+          "label": "关键字",
+          "kind": "text",
+          "key": true
+        },
+        {
+          "id": "value",
+          "label": "值",
+          "kind": "text"
+        }
+      ]
+    },
+    {
+      "type": "linux.ssh.authorized_key",
+      "label": "SSH 授权公钥",
+      "title": "{user} / {key_type}",
+      "fields": [
+        {
+          "id": "user",
+          "label": "用户",
+          "kind": "text",
+          "key": true
+        },
+        {
+          "id": "source",
+          "label": "来源文件",
+          "kind": "text",
+          "key": true
+        },
+        {
+          "id": "line",
+          "label": "行号",
+          "kind": "int",
+          "key": true
+        },
+        {
+          "id": "key_type",
+          "label": "密钥类型",
+          "kind": "text"
+        },
+        {
+          "id": "bits",
+          "label": "位数",
+          "kind": "int"
+        },
+        {
+          "id": "fingerprint_sha256",
+          "label": "SHA256 指纹",
+          "kind": "text"
+        },
+        {
+          "id": "comment",
+          "label": "注释",
+          "kind": "text"
+        },
+        {
+          "id": "options",
+          "label": "授权选项",
+          "kind": "text"
+        }
+      ]
+    },
+    {
+      "type": "linux.ssh.host_key",
+      "label": "SSH 主机公钥",
+      "title": "{source}",
+      "fields": [
+        {
+          "id": "source",
+          "label": "来源文件",
+          "kind": "text",
+          "key": true
+        },
+        {
+          "id": "key_type",
+          "label": "密钥类型",
+          "kind": "text"
+        },
+        {
+          "id": "bits",
+          "label": "位数",
+          "kind": "int"
+        },
+        {
+          "id": "fingerprint_sha256",
+          "label": "SHA256 指纹",
+          "kind": "text"
+        },
+        {
+          "id": "comment",
+          "label": "注释",
+          "kind": "text"
+        }
+      ]
+    }
+  ],
+  "schema_hash": "fnv1a64:fa82d93fe0d360ba"
+}

@@ -1,0 +1,43 @@
+id = "org.ljnljn.linux-ssh-config"
+name = "Linux SSH 配置"
+version = "0.1.0"
+protocol = 2
+library = "ljnljn_linux_ssh_config"
+memory = "256MiB"
+permissions = []
+
+[[analyzer]]
+id = "sshd_config"
+name = "SSH 服务端配置"
+scope = "system"
+platforms = ["linux"]
+trigger = "manual"
+category = "config"
+inputs = ["etc/ssh/sshd_config", "etc/ssh/sshd_config.d/*.conf"]
+
+[[analyzer]]
+id = "ssh_config"
+name = "SSH 客户端配置"
+scope = "system"
+platforms = ["linux"]
+trigger = "manual"
+category = "config"
+inputs = ["etc/ssh/ssh_config", "etc/ssh/ssh_config.d/*.conf", "root/.ssh/config", "home/*/.ssh/config"]
+
+[[analyzer]]
+id = "authorized_keys"
+name = "SSH 授权公钥"
+scope = "system"
+platforms = ["linux"]
+trigger = "manual"
+category = "config"
+inputs = ["root/.ssh/authorized_keys", "home/*/.ssh/authorized_keys"]
+
+[[analyzer]]
+id = "host_keys"
+name = "SSH 主机公钥"
+scope = "system"
+platforms = ["linux"]
+trigger = "manual"
+category = "config"
+inputs = ["etc/ssh/ssh_host_*_key.pub"]
